@@ -1,0 +1,9 @@
+Warning (10273): Verilog HDL warning at decoder.sv(27): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 27
+Warning (10273): Verilog HDL warning at decoder.sv(73): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 73
+Warning (10273): Verilog HDL warning at decoder.sv(82): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 82
+Warning (10273): Verilog HDL warning at decoder.sv(91): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 91
+Warning (10273): Verilog HDL warning at decoder.sv(120): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 120
+Warning (10273): Verilog HDL warning at decoder.sv(137): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 137
+Warning (10273): Verilog HDL warning at decoder.sv(139): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/decoder.sv Line: 139
+Warning (10273): Verilog HDL warning at extend.sv(12): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/extend.sv Line: 12
+Warning (10273): Verilog HDL warning at ALU.sv(84): extended using "x" or "z" File: C:/Users/Harry/Downloads/Pipeline 1.0/ALU.sv Line: 84

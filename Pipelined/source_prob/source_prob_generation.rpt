@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\Harry\Downloads\Pipeline 1.0\source_prob.qsys" --block-symbol-file --output-directory="C:\Users\Harry\Downloads\Pipeline 1.0\source_prob" --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading Pipeline 1.0/source_prob.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\Harry\Downloads\Pipeline 1.0\source_prob.qsys" --synthesis=VERILOG --output-directory="C:\Users\Harry\Downloads\Pipeline 1.0\source_prob\synthesis" --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading Pipeline 1.0/source_prob.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: source_prob: Generating source_prob "source_prob" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "source_prob" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: source_prob: Done "source_prob" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

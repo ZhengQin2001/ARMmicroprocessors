@@ -1,0 +1,121 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 248 192)
+	(text "hazard" (rect 5 0 30 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Match[4..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "Match[4..0]" (rect 21 27 67 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "PCSrcW" (rect 0 0 37 12)(font "Arial" ))
+		(text "PCSrcW" (rect 21 43 58 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "PCWrPendingF" (rect 0 0 63 12)(font "Arial" ))
+		(text "PCWrPendingF" (rect 21 59 84 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "RegWriteM" (rect 0 0 48 12)(font "Arial" ))
+		(text "RegWriteM" (rect 21 75 69 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "RegWriteW" (rect 0 0 50 12)(font "Arial" ))
+		(text "RegWriteW" (rect 21 91 71 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "MemtoRegE" (rect 0 0 53 12)(font "Arial" ))
+		(text "MemtoRegE" (rect 21 107 74 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "BranchTakenE" (rect 0 0 60 12)(font "Arial" ))
+		(text "BranchTakenE" (rect 21 123 81 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "ForwardAE[1..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "ForwardAE[1..0]" (rect 144 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "ForwardBE[1..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "ForwardBE[1..0]" (rect 147 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "StallD" (rect 0 0 22 12)(font "Arial" ))
+		(text "StallD" (rect 189 59 211 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 1))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "StallF" (rect 0 0 21 12)(font "Arial" ))
+		(text "StallF" (rect 190 75 211 87)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80)(line_width 1))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "FlushD" (rect 0 0 28 12)(font "Arial" ))
+		(text "FlushD" (rect 183 91 211 103)(font "Arial" ))
+		(line (pt 232 96)(pt 216 96)(line_width 1))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "FlushE" (rect 0 0 28 12)(font "Arial" ))
+		(text "FlushE" (rect 183 107 211 119)(font "Arial" ))
+		(line (pt 232 112)(pt 216 112)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 160)(line_width 1))
+	)
+)

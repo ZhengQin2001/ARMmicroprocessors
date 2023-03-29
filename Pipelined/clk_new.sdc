@@ -1,0 +1,1 @@
+create_clock -period 11.5 -name clk_max [get_ports clk]

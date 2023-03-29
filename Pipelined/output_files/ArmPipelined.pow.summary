@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Mon Mar 27 03:51:51 2023
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : ArmPipelined
+Top-level Entity Name : ArmPipelined
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Power Models : Final
+Total Thermal Power Dissipation : 114.53 mW
+Core Dynamic Thermal Power Dissipation : 0.41 mW
+Core Static Thermal Power Dissipation : 77.71 mW
+I/O Thermal Power Dissipation : 36.40 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

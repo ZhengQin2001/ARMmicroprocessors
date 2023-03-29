@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Mar 27 03:49:28 2023
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : ArmPipelined
+Top-level Entity Name : ArmPipelined
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 1,625 / 22,320 ( 7 % )
+    Total combinational functions : 1,502 / 22,320 ( 7 % )
+    Dedicated logic registers : 881 / 22,320 ( 4 % )
+Total registers : 881
+Total pins : 34 / 154 ( 22 % )
+Total virtual pins : 0
+Total memory bits : 2,048 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

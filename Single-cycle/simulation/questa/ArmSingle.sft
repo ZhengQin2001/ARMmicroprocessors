@@ -1,0 +1,6 @@
+set tool_name "Questa Intel FPGA (VHDL)"
+set corner_file_list {
+    {{"Slow -6 1.2V 85 Model"} {ArmSingle_6_1200mv_85c_slow.vho ArmSingle_6_1200mv_85c_vhd_slow.sdo}}
+    {{"Slow -6 1.2V 0 Model"} {ArmSingle_6_1200mv_0c_slow.vho ArmSingle_6_1200mv_0c_vhd_slow.sdo}}
+    {{"Fast -M 1.2V 0 Model"} {ArmSingle_min_1200mv_0c_fast.vho ArmSingle_min_1200mv_0c_vhd_fast.sdo}}
+}

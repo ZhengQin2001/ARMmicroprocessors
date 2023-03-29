@@ -1,0 +1,849 @@
+Analysis & Synthesis report for ArmSingle
+Mon Mar 27 03:41:01 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst
+ 14. Parameter Settings for User Entity Instance: arm:inst|controller:c|condlogic:cl|flopenr:flagreg1
+ 15. Parameter Settings for User Entity Instance: arm:inst|controller:c|condlogic:cl|flopenr:flagreg0
+ 16. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:pcmux
+ 17. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|flopr:pcreg
+ 18. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|adder:pcadd1
+ 19. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|adder:pcadd2
+ 20. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:ra1mux
+ 21. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:ra2mux
+ 22. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:resmux
+ 23. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:srcbmux
+ 24. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu
+ 25. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:add_instr
+ 26. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr
+ 27. Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:rsb_instr
+ 28. Parameter Settings for User Entity Instance: source_probes:inst5|altsource_probe_top:in_system_sources_probes_0
+ 29. Parameter Settings for User Entity Instance: source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 30. Port Connectivity Checks: "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 31. Port Connectivity Checks: "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0"
+ 32. Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:rsb_instr"
+ 33. Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr"
+ 34. Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:add_instr"
+ 35. Port Connectivity Checks: "arm:inst|datapath:dp|mux2:ra1mux"
+ 36. Port Connectivity Checks: "arm:inst|datapath:dp|adder:pcadd2"
+ 37. Port Connectivity Checks: "arm:inst|datapath:dp|adder:pcadd1"
+ 38. Port Connectivity Checks: "arm:inst|controller:c"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 27 03:41:01 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; ArmSingle                                      ;
+; Top-level Entity Name              ; ArmSingle                                      ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 5,269                                          ;
+;     Total combinational functions  ; 2,752                                          ;
+;     Dedicated logic registers      ; 2,683                                          ;
+; Total registers                    ; 2683                                           ;
+; Total pins                         ; 34                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; ArmSingle          ; ArmSingle          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                        ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                            ; Library       ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+; source_probes/synthesis/source_probes.v                            ; yes             ; User Verilog HDL File                        ; C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/source_probes.v                            ; source_probes ;
+; source_probes/synthesis/submodules/altsource_probe_top.v           ; yes             ; User Verilog HDL File                        ; C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/submodules/altsource_probe_top.v           ; source_probes ;
+; ArmSingle.bdf                                                      ; yes             ; User Block Diagram/Schematic File            ; C:/Users/Harry/Downloads/I2C/fyp 3.0/ArmSingle.bdf                                                      ;               ;
+; ../../Single-cycle 2.0/arm.sv                                      ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Harry/Downloads/Single-cycle 2.0/arm.sv                                                        ;               ;
+; ../../Single-cycle 2.0/dmem.sv                                     ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Harry/Downloads/Single-cycle 2.0/dmem.sv                                                       ;               ;
+; ../../Single-cycle 2.0/imem.sv                                     ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Harry/Downloads/Single-cycle 2.0/imem.sv                                                       ;               ;
+; ../../Single-cycle 2.0/decoder.sv                                  ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/decoder.sv                                                    ;               ;
+; ../../Single-cycle 2.0/flopenr.sv                                  ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/flopenr.sv                                                    ;               ;
+; ../../Single-cycle 2.0/condLogic.sv                                ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/condLogic.sv                                                  ;               ;
+; ../../Single-cycle 2.0/controller.sv                               ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/controller.sv                                                 ;               ;
+; ../../Single-cycle 2.0/reg_file.sv                                 ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/reg_file.sv                                                   ;               ;
+; ../../Single-cycle 2.0/mux2.sv                                     ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/mux2.sv                                                       ;               ;
+; ../../Single-cycle 2.0/flopr.sv                                    ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/flopr.sv                                                      ;               ;
+; ../../Single-cycle 2.0/extend.sv                                   ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/extend.sv                                                     ;               ;
+; ../../Single-cycle 2.0/adder.sv                                    ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/adder.sv                                                      ;               ;
+; ../../Single-cycle 2.0/ALU.sv                                      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv                                                        ;               ;
+; ../../Single-cycle 2.0/datapath.sv                                 ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv                                                   ;               ;
+; /users/harry/downloads/single-cycle 2.0/memfile.dat                ; yes             ; Auto-Found Unspecified File                  ; /users/harry/downloads/single-cycle 2.0/memfile.dat                                                     ;               ;
+; altsource_probe.v                                                  ; yes             ; Megafunction                                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe.v                             ;               ;
+; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                 ;               ;
+; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv             ;               ;
+; altsource_probe_body.vhd                                           ; yes             ; Megafunction                                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd                      ;               ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_rom_sr.vhd                                ;               ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_hub.vhd                                   ; altera_sld    ;
+; db/ip/sld5a96e67c/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/alt_sld_fab.v                                    ; alt_sld_fab   ;
+; db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab   ;
+; db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab   ;
+; db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab   ;
+; db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab   ;
+; db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab   ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_jtag_hub.vhd                              ;               ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 5,269     ;
+;                                             ;           ;
+; Total combinational functions               ; 2752      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 2406      ;
+;     -- 3 input functions                    ; 236       ;
+;     -- <=2 input functions                  ; 110       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2624      ;
+;     -- arithmetic mode                      ; 128       ;
+;                                             ;           ;
+; Total registers                             ; 2683      ;
+;     -- Dedicated logic registers            ; 2683      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 34        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 2563      ;
+; Total fan-out                               ; 18771     ;
+; Average fan-out                             ; 3.41      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ; Entity Name                       ; Library Name  ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; |ArmSingle                                                                                                                              ; 2752 (2)            ; 2683 (0)                  ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |ArmSingle                                                                                                                                                                                                                                                                                                                                            ;                                   ;               ;
+;    |arm:inst|                                                                                                                           ; 1107 (0)            ; 515 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst                                                                                                                                                                                                                                                                                                                                   ; arm                               ; work          ;
+;       |controller:c|                                                                                                                    ; 34 (0)              ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c                                                                                                                                                                                                                                                                                                                      ; controller                        ; work          ;
+;          |condlogic:cl|                                                                                                                 ; 22 (6)              ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c|condlogic:cl                                                                                                                                                                                                                                                                                                         ; condlogic                         ; work          ;
+;             |condcheck:cc|                                                                                                              ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c|condlogic:cl|condcheck:cc                                                                                                                                                                                                                                                                                            ; condcheck                         ; work          ;
+;             |flopenr:flagreg0|                                                                                                          ; 6 (6)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c|condlogic:cl|flopenr:flagreg0                                                                                                                                                                                                                                                                                        ; flopenr                           ; work          ;
+;             |flopenr:flagreg1|                                                                                                          ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c|condlogic:cl|flopenr:flagreg1                                                                                                                                                                                                                                                                                        ; flopenr                           ; work          ;
+;          |decoder:dec|                                                                                                                  ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|controller:c|decoder:dec                                                                                                                                                                                                                                                                                                          ; decoder                           ; work          ;
+;       |datapath:dp|                                                                                                                     ; 1073 (0)            ; 512 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp                                                                                                                                                                                                                                                                                                                       ; datapath                          ; work          ;
+;          |adder:pcadd1|                                                                                                                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|adder:pcadd1                                                                                                                                                                                                                                                                                                          ; adder                             ; work          ;
+;          |adder:pcadd2|                                                                                                                 ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|adder:pcadd2                                                                                                                                                                                                                                                                                                          ; adder                             ; work          ;
+;          |alu:alu|                                                                                                                      ; 175 (111)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|alu:alu                                                                                                                                                                                                                                                                                                               ; alu                               ; work          ;
+;             |alu_adder:add_instr|                                                                                                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|alu:alu|alu_adder:add_instr                                                                                                                                                                                                                                                                                           ; alu_adder                         ; work          ;
+;             |alu_adder:sub_instr|                                                                                                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr                                                                                                                                                                                                                                                                                           ; alu_adder                         ; work          ;
+;          |flopr:pcreg|                                                                                                                  ; 30 (30)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|flopr:pcreg                                                                                                                                                                                                                                                                                                           ; flopr                             ; work          ;
+;          |mux2:ra1mux|                                                                                                                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|mux2:ra1mux                                                                                                                                                                                                                                                                                                           ; mux2                              ; work          ;
+;          |mux2:ra2mux|                                                                                                                  ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|mux2:ra2mux                                                                                                                                                                                                                                                                                                           ; mux2                              ; work          ;
+;          |mux2:resmux|                                                                                                                  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|mux2:resmux                                                                                                                                                                                                                                                                                                           ; mux2                              ; work          ;
+;          |mux2:srcbmux|                                                                                                                 ; 49 (49)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|mux2:srcbmux                                                                                                                                                                                                                                                                                                          ; mux2                              ; work          ;
+;          |regfile:rf|                                                                                                                   ; 741 (741)           ; 480 (480)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|arm:inst|datapath:dp|regfile:rf                                                                                                                                                                                                                                                                                                            ; regfile                           ; work          ;
+;    |dmem:inst4|                                                                                                                         ; 1424 (1424)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|dmem:inst4                                                                                                                                                                                                                                                                                                                                 ; dmem                              ; work          ;
+;    |imem:inst1|                                                                                                                         ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|imem:inst1                                                                                                                                                                                                                                                                                                                                 ; imem                              ; work          ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 116 (1)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld    ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 115 (0)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld    ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 115 (0)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab   ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 115 (1)             ; 78 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab   ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 114 (0)             ; 73 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab   ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 114 (77)            ; 73 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work          ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 19 (19)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work          ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld    ;
+;    |source_probes:inst5|                                                                                                                ; 61 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5                                                                                                                                                                                                                                                                                                                        ; source_probes                     ; source_probes ;
+;       |altsource_probe_top:in_system_sources_probes_0|                                                                                  ; 61 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                                         ; altsource_probe_top               ; source_probes ;
+;          |altsource_probe:issp_impl|                                                                                                    ; 61 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                                               ; altsource_probe                   ; work          ;
+;             |altsource_probe_body:altsource_probe_body_inst|                                                                            ; 61 (3)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                                                ; altsource_probe_body              ; work          ;
+;                |altsource_probe_impl:\wider_probe_gen:wider_probe_inst|                                                                 ; 58 (40)             ; 42 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst                                                                                                                                         ; altsource_probe_impl              ; work          ;
+;                   |sld_rom_sr:\instance_id_gen:rom_info_inst|                                                                           ; 18 (18)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst                                                                                               ; sld_rom_sr                        ; work          ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                  ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
+; Vendor ; IP Core Name                    ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                ; IP Include File    ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                    ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                    ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                    ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                    ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                    ;
+; N/A    ; altera_in_system_sources_probes ; 22.1    ; N/A          ; N/A          ; |ArmSingle|source_probes:inst5                                                                                                                                                                                                                                                 ; source_probes.qsys ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------------------------+--------------------+
+; Register name                                            ; Reason for Removal ;
++----------------------------------------------------------+--------------------+
+; arm:inst|controller:c|condlogic:cl|flopenr:flagreg0|q[1] ; Lost fanout        ;
+; Total Number of Removed Registers = 1                    ;                    ;
++----------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2683  ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 41    ;
+; Number of registers using Asynchronous Clear ; 93    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2622  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[2] ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; Yes        ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|shift_reg[23]                                             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 36 LEs               ; 8 LEs                  ; Yes        ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[0]      ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|mux2:srcbmux|y[24]                                                                                                                                                                                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|mux2:srcbmux|y[1]                                                                                                                                                                                                                       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|mux2:srcbmux|y[6]                                                                                                                                                                                                                       ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |ArmSingle|arm:inst|datapath:dp|alu:alu|Mux24                                                                                                                                                                                                                           ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|alu:alu|Mux15                                                                                                                                                                                                                           ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|alu:alu|Mux4                                                                                                                                                                                                                            ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|alu:alu|Mux2                                                                                                                                                                                                                            ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |ArmSingle|arm:inst|datapath:dp|alu:alu|Mux1                                                                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                                                       ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                                                                                                                                                        ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                                                                                                                                                        ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                                                        ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[0]                                                                                                                                                              ;
++---------------------------------+-------+------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|controller:c|condlogic:cl|flopenr:flagreg1 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|controller:c|condlogic:cl|flopenr:flagreg0 ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; WIDTH          ; 2     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:pcmux ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|flopr:pcreg ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|adder:pcadd1 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|adder:pcadd2 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:ra1mux ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:ra2mux ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:resmux ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|mux2:srcbmux ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 32    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:add_instr ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm:inst|datapath:dp|alu:alu|alu_adder:rsb_instr ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: source_probes:inst5|altsource_probe_top:in_system_sources_probes_0 ;
++-------------------------+-----------------+---------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                ;
++-------------------------+-----------------+---------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                              ;
+; lpm_hint                ; UNUSED          ; String                                                              ;
+; sld_auto_instance_index ; YES             ; String                                                              ;
+; sld_instance_index      ; 0               ; Signed Integer                                                      ;
+; sld_node_info_parameter ; 4746752         ; Signed Integer                                                      ;
+; sld_ir_width            ; 4               ; Signed Integer                                                      ;
+; instance_id             ; SOPR            ; String                                                              ;
+; probe_width             ; 32              ; Signed Integer                                                      ;
+; source_width            ; 0               ; Signed Integer                                                      ;
+; source_initial_value    ; 0               ; String                                                              ;
+; enable_metastability    ; NO              ; String                                                              ;
++-------------------------+-----------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl ;
++-------------------------+-----------------+-----------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                                          ;
++-------------------------+-----------------+-----------------------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                                        ;
+; lpm_hint                ; UNUSED          ; String                                                                                        ;
+; sld_auto_instance_index ; YES             ; String                                                                                        ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                                ;
+; SLD_NODE_INFO           ; 4746752         ; Signed Integer                                                                                ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                                ;
+; instance_id             ; SOPR            ; String                                                                                        ;
+; probe_width             ; 32              ; Signed Integer                                                                                ;
+; source_width            ; 0               ; Signed Integer                                                                                ;
+; source_initial_value    ; 0               ; String                                                                                        ;
+; enable_metastability    ; NO              ; String                                                                                        ;
++-------------------------+-----------------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"                                                           ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; raw_tck         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tdi             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; usr1            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_sdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_e1dr ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_udr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_uir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_tlr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ena             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_in           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_out          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; tdo             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0"                                                                                ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; source     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; source_clk ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; source_ena ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:rsb_instr" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at VCC                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at VCC                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|alu:alu|alu_adder:add_instr" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|mux2:ra1mux" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; d1   ; Input ; Info     ; Stuck at VCC                       ;
++------+-------+----------+------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|adder:pcadd2" ;
++----------+-------+----------+---------------------------------+
+; Port     ; Type  ; Severity ; Details                         ;
++----------+-------+----------+---------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                    ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                    ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                    ;
++----------+-------+----------+---------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|datapath:dp|adder:pcadd1" ;
++----------+-------+----------+---------------------------------+
+; Port     ; Type  ; Severity ; Details                         ;
++----------+-------+----------+---------------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND                    ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND                    ;
+; b[2]     ; Input ; Info     ; Stuck at VCC                    ;
++----------+-------+----------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm:inst|controller:c"                                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; NoWrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 55                          ;
+; cycloneiii_ff         ; 2605                        ;
+;     CLR               ; 3                           ;
+;     CLR SLD           ; 30                          ;
+;     ENA               ; 2536                        ;
+;     ENA CLR           ; 35                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 2635                        ;
+;     arith             ; 120                         ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 62                          ;
+;     normal            ; 2515                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 146                         ;
+;         4 data inputs ; 2355                        ;
+;                       ;                             ;
+; Max LUT depth         ; 21.60                       ;
+; Average LUT depth     ; 12.66                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Mon Mar 27 03:40:41 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ArmSingle -c ArmSingle
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file source_probes/synthesis/source_probes.v
+    Info (12023): Found entity 1: source_probes File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/source_probes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file source_probes/synthesis/submodules/altsource_probe_top.v
+    Info (12023): Found entity 1: altsource_probe_top File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/submodules/altsource_probe_top.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file de0_nano_soc_baseline.v
+    Info (12023): Found entity 1: de0_nano_soc_baseline File: C:/Users/Harry/Downloads/I2C/fyp 3.0/de0_nano_soc_baseline.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file armsingle.bdf
+    Info (12023): Found entity 1: ArmSingle
+Info (12021): Found 14 design units, including 14 entities, in source file /users/harry/downloads/single-cycle 2.0/arm.sv
+    Info (12023): Found entity 1: decoder File: C:/Users/Harry/Downloads/Single-cycle 2.0/decoder.sv Line: 1
+    Info (12023): Found entity 2: flopenr File: C:/Users/Harry/Downloads/Single-cycle 2.0/flopenr.sv Line: 1
+    Info (12023): Found entity 3: condlogic File: C:/Users/Harry/Downloads/Single-cycle 2.0/condLogic.sv Line: 3
+    Info (12023): Found entity 4: condcheck File: C:/Users/Harry/Downloads/Single-cycle 2.0/condLogic.sv Line: 24
+    Info (12023): Found entity 5: controller File: C:/Users/Harry/Downloads/Single-cycle 2.0/controller.sv Line: 4
+    Info (12023): Found entity 6: regfile File: C:/Users/Harry/Downloads/Single-cycle 2.0/reg_file.sv Line: 1
+    Info (12023): Found entity 7: mux2 File: C:/Users/Harry/Downloads/Single-cycle 2.0/mux2.sv Line: 1
+    Info (12023): Found entity 8: flopr File: C:/Users/Harry/Downloads/Single-cycle 2.0/flopr.sv Line: 1
+    Info (12023): Found entity 9: extend File: C:/Users/Harry/Downloads/Single-cycle 2.0/extend.sv Line: 1
+    Info (12023): Found entity 10: adder File: C:/Users/Harry/Downloads/Single-cycle 2.0/adder.sv Line: 1
+    Info (12023): Found entity 11: alu_adder File: C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv Line: 1
+    Info (12023): Found entity 12: alu File: C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv Line: 10
+    Info (12023): Found entity 13: datapath File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 8
+    Info (12023): Found entity 14: arm File: C:/Users/Harry/Downloads/Single-cycle 2.0/arm.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/harry/downloads/single-cycle 2.0/dmem.sv
+    Info (12023): Found entity 1: dmem File: C:/Users/Harry/Downloads/Single-cycle 2.0/dmem.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/harry/downloads/single-cycle 2.0/imem.sv
+    Info (12023): Found entity 1: imem File: C:/Users/Harry/Downloads/Single-cycle 2.0/imem.sv Line: 1
+Info (12127): Elaborating entity "ArmSingle" for the top level hierarchy
+Info (12128): Elaborating entity "arm" for hierarchy "arm:inst"
+Info (12128): Elaborating entity "controller" for hierarchy "arm:inst|controller:c" File: C:/Users/Harry/Downloads/Single-cycle 2.0/arm.sv Line: 18
+Info (12128): Elaborating entity "decoder" for hierarchy "arm:inst|controller:c|decoder:dec" File: C:/Users/Harry/Downloads/Single-cycle 2.0/controller.sv Line: 18
+Info (12128): Elaborating entity "condlogic" for hierarchy "arm:inst|controller:c|condlogic:cl" File: C:/Users/Harry/Downloads/Single-cycle 2.0/controller.sv Line: 19
+Info (12128): Elaborating entity "flopenr" for hierarchy "arm:inst|controller:c|condlogic:cl|flopenr:flagreg1" File: C:/Users/Harry/Downloads/Single-cycle 2.0/condLogic.sv Line: 12
+Info (12128): Elaborating entity "condcheck" for hierarchy "arm:inst|controller:c|condlogic:cl|condcheck:cc" File: C:/Users/Harry/Downloads/Single-cycle 2.0/condLogic.sv Line: 15
+Info (12128): Elaborating entity "datapath" for hierarchy "arm:inst|datapath:dp" File: C:/Users/Harry/Downloads/Single-cycle 2.0/arm.sv Line: 20
+Info (12128): Elaborating entity "mux2" for hierarchy "arm:inst|datapath:dp|mux2:pcmux" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 26
+Info (12128): Elaborating entity "flopr" for hierarchy "arm:inst|datapath:dp|flopr:pcreg" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 27
+Info (12128): Elaborating entity "adder" for hierarchy "arm:inst|datapath:dp|adder:pcadd1" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 28
+Info (12128): Elaborating entity "mux2" for hierarchy "arm:inst|datapath:dp|mux2:ra1mux" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 31
+Info (12128): Elaborating entity "regfile" for hierarchy "arm:inst|datapath:dp|regfile:rf" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 33
+Info (12128): Elaborating entity "extend" for hierarchy "arm:inst|datapath:dp|extend:ext" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 35
+Info (12128): Elaborating entity "alu" for hierarchy "arm:inst|datapath:dp|alu:alu" File: C:/Users/Harry/Downloads/Single-cycle 2.0/datapath.sv Line: 38
+Warning (10199): Verilog HDL Case Statement warning at ALU.sv(66): case item expression never matches the case expression File: C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv Line: 66
+Warning (10199): Verilog HDL Case Statement warning at ALU.sv(68): case item expression never matches the case expression File: C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv Line: 68
+Info (12128): Elaborating entity "alu_adder" for hierarchy "arm:inst|datapath:dp|alu:alu|alu_adder:add_instr" File: C:/Users/Harry/Downloads/Single-cycle 2.0/ALU.sv Line: 20
+Info (12128): Elaborating entity "imem" for hierarchy "imem:inst1"
+Warning (10030): Net "RAM.data_a" at imem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/Harry/Downloads/Single-cycle 2.0/imem.sv Line: 3
+Warning (10030): Net "RAM.waddr_a" at imem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/Harry/Downloads/Single-cycle 2.0/imem.sv Line: 3
+Warning (10030): Net "RAM.we_a" at imem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/Harry/Downloads/Single-cycle 2.0/imem.sv Line: 3
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:inst4"
+Info (12128): Elaborating entity "source_probes" for hierarchy "source_probes:inst5"
+Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0" File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/source_probes.v Line: 19
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/submodules/altsource_probe_top.v Line: 55
+Info (12130): Elaborated megafunction instantiation "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/submodules/altsource_probe_top.v Line: 55
+Info (12133): Instantiated megafunction "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" with the following parameter: File: C:/Users/Harry/Downloads/I2C/fyp 3.0/source_probes/synthesis/submodules/altsource_probe_top.v Line: 55
+    Info (12134): Parameter "lpm_type" = "altsource_probe"
+    Info (12134): Parameter "lpm_hint" = "UNUSED"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "SLD_NODE_INFO" = "4746752"
+    Info (12134): Parameter "sld_ir_width" = "4"
+    Info (12134): Parameter "instance_id" = "SOPR"
+    Info (12134): Parameter "probe_width" = "32"
+    Info (12134): Parameter "source_width" = "0"
+    Info (12134): Parameter "source_initial_value" = "0"
+    Info (12134): Parameter "enable_metastability" = "NO"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe.v Line: 169
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe.v Line: 281
+Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 508
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2023.03.27.03:40:49 Progress: Loading sld5a96e67c/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld5a96e67c/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ip/sld5a96e67c/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "arm:inst|datapath:dp|regfile:rf|rf" is uninferred due to asynchronous read logic File: C:/Users/Harry/Downloads/Single-cycle 2.0/reg_file.sv Line: 6
+    Info (276007): RAM logic "dmem:inst4|RAM" is uninferred due to asynchronous read logic File: C:/Users/Harry/Downloads/Single-cycle 2.0/dmem.sv Line: 4
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Harry/Downloads/I2C/fyp 3.0/db/ArmSingle.ram0_imem_37c714.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Harry/Downloads/I2C/fyp 3.0/output_files/ArmSingle.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 5377 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 5338 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4886 megabytes
+    Info: Processing ended: Mon Mar 27 03:41:01 2023
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Harry/Downloads/I2C/fyp 3.0/output_files/ArmSingle.map.smsg.
+
+

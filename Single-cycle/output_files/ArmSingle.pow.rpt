@@ -1,0 +1,338 @@
+Power Analyzer report for ArmSingle
+Mon Mar 27 03:42:00 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Parallel Compilation
+  3. Power Analyzer Summary
+  4. Power Analyzer Settings
+  5. Power Analyzer Simulation Files Read
+  6. Operating Conditions Used
+  7. Thermal Power Dissipation by Block
+  8. Thermal Power Dissipation by Block Type
+  9. Thermal Power Dissipation by Hierarchy
+ 10. Core Dynamic Thermal Power Dissipation by Clock Domain
+ 11. Current Drawn from Voltage Supplies Summary
+ 12. VCCIO Supply Current Drawn by I/O Bank
+ 13. VCCIO Supply Current Drawn by Voltage
+ 14. Confidence Metric Details
+ 15. Signal Activities
+ 16. Power Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.17        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   2.4%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Power Analyzer Summary                                                                    ;
++----------------------------------------+--------------------------------------------------+
+; Power Analyzer Status                  ; Successful - Mon Mar 27 03:42:00 2023            ;
+; Quartus Prime Version                  ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition   ;
+; Revision Name                          ; ArmSingle                                        ;
+; Top-level Entity Name                  ; ArmSingle                                        ;
+; Family                                 ; Cyclone IV E                                     ;
+; Device                                 ; EP4CE22F17C6                                     ;
+; Power Models                           ; Final                                            ;
+; Total Thermal Power Dissipation        ; 112.62 mW                                        ;
+; Core Dynamic Thermal Power Dissipation ; 0.38 mW                                          ;
+; Core Static Thermal Power Dissipation  ; 78.08 mW                                         ;
+; I/O Thermal Power Dissipation          ; 34.16 mW                                         ;
+; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
++----------------------------------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Power Analyzer Settings                                                                                                  ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Option                                                           ; Setting                               ; Default Value ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Use smart compilation                                            ; Off                                   ; Off           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                                    ; On            ;
+; Enable compact report table                                      ; Off                                   ; Off           ;
+; Use Input Files                                                  ; On                                    ; Off           ;
+; Preset Cooling Solution                                          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ;               ;
+; Board thermal model                                              ; None (CONSERVATIVE)                   ;               ;
+; Default Power Toggle Rate                                        ; 12.5%                                 ; 12.5%         ;
+; Default Power Input I/O Toggle Rate                              ; 12.5%                                 ; 12.5%         ;
+; Use vectorless estimation                                        ; On                                    ; On            ;
+; Filter Glitches in VCD File Reader                               ; On                                    ; On            ;
+; Power Analyzer Report Signal Activity                            ; Off                                   ; Off           ;
+; Power Analyzer Report Power Dissipation                          ; Off                                   ; Off           ;
+; Device Power Characteristics                                     ; TYPICAL                               ; TYPICAL       ;
+; Automatically Compute Junction Temperature                       ; On                                    ; On            ;
+; Specified Junction Temperature                                   ; 25                                    ; 25            ;
+; Ambient Temperature                                              ; 25                                    ; 25            ;
+; Use Custom Cooling Solution                                      ; Off                                   ; Off           ;
+; Board Temperature                                                ; 25                                    ; 25            ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Power Analyzer Simulation Files Read                                                                                                         ;
++---------+----------------------------------------------------+-----------+------------+----------------+--------------+-----------+----------+
+; File ID ; File Name                                          ; File Type ; Entity     ; VCD Start Time ; VCD End Time ; Unknown % ; Toggle % ;
++---------+----------------------------------------------------+-----------+------------+----------------+--------------+-----------+----------+
+; f1      ; ../Single-cycle 3.0/Single-cycle 1.0/testbench.vcd ; VCD       ; |ArmSingle ; N/A            ; N/A          ; 56.2%     ; 0.0%     ;
++---------+----------------------------------------------------+-----------+------------+----------------+--------------+-----------+----------+
+
+
++-------------------------------------------------------------------------+
+; Operating Conditions Used                                               ;
++---------------------------------------------+---------------------------+
+; Setting                                     ; Value                     ;
++---------------------------------------------+---------------------------+
+; Device power characteristics                ; Typical                   ;
+;                                             ;                           ;
+; Voltages                                    ;                           ;
+;     VCCINT                                  ; 1.20 V                    ;
+;     VCCA                                    ; 2.50 V                    ;
+;     VCCD                                    ; 1.20 V                    ;
+;     2.5 V I/O Standard                      ; 2.5 V                     ;
+;                                             ;                           ;
+; Auto computed junction temperature          ; 26.2 degrees Celsius      ;
+;     Ambient temperature                     ; 25.0 degrees Celsius      ;
+;     Junction-to-Case thermal resistance     ; 6.50 degrees Celsius/Watt ;
+;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt ;
+;     Heat Sink-to-Ambient thermal resistance ; 4.30 degrees Celsius/Watt ;
+;                                             ;                           ;
+; Board model used                            ; None                      ;
++---------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block                                                                                                           ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+; Block Name ; Block Type ; Total Thermal Power ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ;
++------------+------------+---------------------+-----------------------------+--------------------------------+-------------------------------+
+(1) The "Thermal Power Dissipation by Block" Table has been hidden. To show this table, please select the "Write power dissipation by block to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Block Type                                                                                                                                                                            ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; Block Type          ; Total Thermal Power by Block Type ; Block Thermal Dynamic Power ; Block Thermal Static Power (1) ; Routing Thermal Dynamic Power ; Block Average Toggle Rate (millions of transitions / sec) ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+; JTAG                ; 0.01 mW                           ; 0.00 mW                     ; --                             ; 0.01 mW                       ;    6.875                                                  ;
+; Combinational cell  ; 0.03 mW                           ; 0.03 mW                     ; --                             ; 0.01 mW                       ;    0.036                                                  ;
+; Clock control block ; 0.22 mW                           ; 0.00 mW                     ; --                             ; 0.22 mW                       ;   10.000                                                  ;
+; Register cell       ; 0.12 mW                           ; 0.09 mW                     ; --                             ; 0.03 mW                       ;    0.056                                                  ;
+; I/O                 ; 14.66 mW                          ; 0.08 mW                     ; 14.59 mW                       ; 0.00 mW                       ;    0.640                                                  ;
++---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
+(1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Thermal Power Dissipation by Hierarchy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                                                                                                               ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; |ArmSingle                                                                                                                               ; 15.05 mW (14.89 mW)                  ; 0.19 mW (0.08 mW)               ; 14.59 mW (14.59 mW)               ; 0.27 mW (0.23 mW)                 ; |ArmSingle                                                                                                                                                                                                                                                                                                                                            ;
+;     |hard_block:auto_generated_inst                                                                                                      ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|hard_block:auto_generated_inst                                                                                                                                                                                                                                                                                                             ;
+;     |sld_hub:auto_hub                                                                                                                    ; 0.12 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ;
+;         |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric ; 0.12 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ;
+;             |alt_sld_fab:instrumentation_fabric                                                                                          ; 0.12 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ;
+;                 |alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                     ; 0.12 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ;
+;                     |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                         ; 0.11 mW (0.00 mW)                    ; 0.09 mW (0.00 mW)               ; --                                ; 0.03 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ;
+;                         |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                                                                    ; 0.11 mW (0.08 mW)                    ; 0.09 mW (0.06 mW)               ; --                                ; 0.03 mW (0.02 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ;
+;                             |sld_rom_sr:hub_info_reg                                                                                     ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ;
+;                             |sld_shadow_jsm:shadow_jsm                                                                                   ; 0.03 mW (0.03 mW)                    ; 0.02 mW (0.02 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ArmSingle|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ;
+;         |sld_jtag_interface_mod:\jtag_interface_mod_gen:device_family_mod_inst                                                           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|sld_hub:auto_hub|sld_jtag_interface_mod:\jtag_interface_mod_gen:device_family_mod_inst                                                                                                                                                                                                                                                     ;
+;     |arm:inst                                                                                                                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst                                                                                                                                                                                                                                                                                                                                   ;
+;         |controller:c                                                                                                                    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c                                                                                                                                                                                                                                                                                                                      ;
+;             |condlogic:cl                                                                                                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c|condlogic:cl                                                                                                                                                                                                                                                                                                         ;
+;                 |condcheck:cc                                                                                                            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c|condlogic:cl|condcheck:cc                                                                                                                                                                                                                                                                                            ;
+;                 |flopenr:flagreg0                                                                                                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c|condlogic:cl|flopenr:flagreg0                                                                                                                                                                                                                                                                                        ;
+;                 |flopenr:flagreg1                                                                                                        ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c|condlogic:cl|flopenr:flagreg1                                                                                                                                                                                                                                                                                        ;
+;             |decoder:dec                                                                                                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|controller:c|decoder:dec                                                                                                                                                                                                                                                                                                          ;
+;         |datapath:dp                                                                                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp                                                                                                                                                                                                                                                                                                                       ;
+;             |alu:alu                                                                                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|alu:alu                                                                                                                                                                                                                                                                                                               ;
+;                 |alu_adder:add_instr                                                                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|alu:alu|alu_adder:add_instr                                                                                                                                                                                                                                                                                           ;
+;                 |alu_adder:sub_instr                                                                                                     ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|alu:alu|alu_adder:sub_instr                                                                                                                                                                                                                                                                                           ;
+;             |adder:pcadd1                                                                                                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|adder:pcadd1                                                                                                                                                                                                                                                                                                          ;
+;             |adder:pcadd2                                                                                                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|adder:pcadd2                                                                                                                                                                                                                                                                                                          ;
+;             |flopr:pcreg                                                                                                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|flopr:pcreg                                                                                                                                                                                                                                                                                                           ;
+;             |mux2:ra1mux                                                                                                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|mux2:ra1mux                                                                                                                                                                                                                                                                                                           ;
+;             |mux2:ra2mux                                                                                                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|mux2:ra2mux                                                                                                                                                                                                                                                                                                           ;
+;             |mux2:resmux                                                                                                                 ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|mux2:resmux                                                                                                                                                                                                                                                                                                           ;
+;             |regfile:rf                                                                                                                  ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|regfile:rf                                                                                                                                                                                                                                                                                                            ;
+;             |mux2:srcbmux                                                                                                                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|arm:inst|datapath:dp|mux2:srcbmux                                                                                                                                                                                                                                                                                                          ;
+;     |imem:inst1                                                                                                                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|imem:inst1                                                                                                                                                                                                                                                                                                                                 ;
+;     |dmem:inst4                                                                                                                          ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|dmem:inst4                                                                                                                                                                                                                                                                                                                                 ;
+;     |source_probes:inst5                                                                                                                 ; 0.03 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.01 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5                                                                                                                                                                                                                                                                                                                        ;
+;         |altsource_probe_top:in_system_sources_probes_0                                                                                  ; 0.03 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.01 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                                         ;
+;             |altsource_probe:issp_impl                                                                                                   ; 0.03 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.01 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                                               ;
+;                 |altsource_probe_body:altsource_probe_body_inst                                                                          ; 0.03 mW (0.00 mW)                    ; 0.03 mW (0.00 mW)               ; --                                ; 0.01 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                                                ;
+;                     |altsource_probe_impl:\wider_probe_gen:wider_probe_inst                                                              ; 0.03 mW (0.02 mW)                    ; 0.03 mW (0.02 mW)               ; --                                ; 0.01 mW (0.01 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst                                                                                                                                         ;
+;                         |sld_rom_sr:\instance_id_gen:rom_info_inst                                                                       ; 0.01 mW (0.01 mW)                    ; 0.01 mW (0.01 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\instance_id_gen:rom_info_inst                                                                                               ;
+;                 |sld_jtag_endpoint_adapter:jtag_signal_adapter                                                                           ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |ArmSingle|source_probes:inst5|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter                                                                                                                                                                                                 ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+(1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
+
+(2) The "Block Thermal Static Power" for all levels of hierarchy except the top-level hierarchy is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
+
+
++------------------------------------------------------------------------+
+; Core Dynamic Thermal Power Dissipation by Clock Domain                 ;
++---------------------+-----------------------+--------------------------+
+; Clock Domain        ; Clock Frequency (MHz) ; Total Core Dynamic Power ;
++---------------------+-----------------------+--------------------------+
+; CLK                 ; 0.00                  ; 0.00                     ;
+; altera_reserved_tck ; 10.00                 ; 0.38                     ;
+; No clock domain     ; 0.00                  ; 0.00                     ;
++---------------------+-----------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Current Drawn from Voltage Supplies Summary                                                                                        ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCINT         ; 17.75 mA                ; 0.33 mA                   ; 17.42 mA                 ; 17.75 mA                         ;
+; VCCIO          ; 7.99 mA                 ; 0.02 mA                   ; 7.97 mA                  ; 7.99 mA                          ;
+; VCCA           ; 27.53 mA                ; 0.00 mA                   ; 27.53 mA                 ; 27.53 mA                         ;
+; VCCD           ; 2.10 mA                 ; 0.00 mA                   ; 2.10 mA                  ; 2.10 mA                          ;
++----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++-----------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by I/O Bank                                                        ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; I/O Bank ; VCCIO Voltage ; Total Current Drawn ; Dynamic Current Drawn ; Static Current Drawn ;
++----------+---------------+---------------------+-----------------------+----------------------+
+; 1        ; 2.5V          ; 1.04 mA             ; 0.02 mA               ; 1.02 mA              ;
+; 2        ; 2.5V          ; 0.98 mA             ; 0.00 mA               ; 0.98 mA              ;
+; 3        ; 2.5V          ; 0.98 mA             ; 0.00 mA               ; 0.98 mA              ;
+; 4        ; 2.5V          ; 0.98 mA             ; 0.00 mA               ; 0.98 mA              ;
+; 5        ; 2.5V          ; 0.98 mA             ; 0.00 mA               ; 0.98 mA              ;
+; 6        ; 2.5V          ; 0.99 mA             ; 0.00 mA               ; 0.99 mA              ;
+; 7        ; 2.5V          ; 1.01 mA             ; 0.00 mA               ; 1.01 mA              ;
+; 8        ; 2.5V          ; 1.02 mA             ; 0.00 mA               ; 1.02 mA              ;
++----------+---------------+---------------------+-----------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; VCCIO Supply Current Drawn by Voltage                                                                                             ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+; 2.5V          ; 7.99 mA                 ; 0.02 mA                   ; 7.97 mA                  ; 7.99 mA                          ;
++---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
+(1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
+(2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                          ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+; Data Source                                                                            ; Total        ; Pin        ; Registered    ; Combinational ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+; Simulation (from file)                                                                 ;              ;            ;               ;               ;
+;     -- Simulation time nodes in unknown state                                          ; 56.2%        ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 2 (0.0%)     ; 2 (4.7%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Zero toggle rate, from Simulation                        ; 2 (0.0%)     ; 2 (4.7%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 2 (0.0%)     ; 2 (4.7%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Node, entity or clock assignment                                                       ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 1 (0.0%)     ; 1 (2.3%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 1 (0.0%)     ; 1 (2.3%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Vectorless estimation                                                                  ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 6877 (99.9%) ; 35 (81.4%) ; 2683 (100.0%) ; 4159 (100.0%) ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 6551 (95.1%) ; 34 (79.1%) ; 2563 (95.5%)  ; 3954 (95.1%)  ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 6877 (99.9%) ; 35 (81.4%) ; 2683 (100.0%) ; 4159 (100.0%) ;
+;                                                                                        ;              ;            ;               ;               ;
+; Default assignment                                                                     ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 2 (0.0%)     ; 2 (4.7%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 5 (0.1%)     ; 5 (11.6%)  ; 0 (0.0%)      ; 0 (0.0%)      ;
+;                                                                                        ;              ;            ;               ;               ;
+; Assumed 0                                                                              ;              ;            ;               ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 3 (0.0%)     ; 3 (7.0%)   ; 0 (0.0%)      ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+--------------+------------+---------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Activities                                                                                                                                   ;
++--------+------+---------------------------------------------+-----------------------------+--------------------+------------------------------------+
+; Signal ; Type ; Toggle Rate (millions of transitions / sec) ; Toggle Rate Data Source (1) ; Static Probability ; Static Probability Data Source (1) ;
++--------+------+---------------------------------------------+-----------------------------+--------------------+------------------------------------+
+(1) The "Signal Activity" Table has been hidden. To show this table, please select the "Write signal activities to report file" option under "PowerPlay Power Analyzer Settings".
+
+
++-------------------------+
+; Power Analyzer Messages ;
++-------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Power Analyzer
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Mon Mar 27 03:41:56 2023
+Info: Command: quartus_pow --read_settings_files=on --write_settings_files=off ArmSingle -c ArmSingle
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (222002): Starting scan of VCD file ../Single-cycle 3.0/Single-cycle 1.0/testbench.vcd (0 ns to End of File) for signal static probabilities and transition densities
+Info (222003): Finished scan of VCD file ../Single-cycle 3.0/Single-cycle 1.0/testbench.vcd (0 ns to End of File) for signal static probabilities and transition densities
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity sld_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Info (332104): Reading SDC File: 'clk_new.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
+    Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
+    Critical Warning (332169): From clk_50 (Fall) to clk_50 (Fall) (setup and hold)
+Info (223000): Starting Vectorless Power Activity Estimation
+Info (223001): Completed Vectorless Power Activity Estimation
+Info (215037): Detailed signal activity file source information is not written to output Signal Activity File.
+Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (215049): Average toggle rate for this design is 0.054 millions of transitions / sec
+Info (215031): Total thermal power estimate for the design is 112.62 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4927 megabytes
+    Info: Processing ended: Mon Mar 27 03:42:00 2023
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
